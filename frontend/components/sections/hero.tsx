@@ -11,11 +11,11 @@ export function Hero() {
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-primary)]" />
       
-      {/* Mesh Gradient Overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 -left-4 w-96 h-96 bg-[var(--accent)] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
-        <div className="absolute top-0 -right-4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000" />
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-500" />
+      {/* Enhanced Mesh Gradient Overlay with Neon */}
+      <div className="absolute inset-0 opacity-40 gradient-mesh">
+        <div className="absolute top-0 -left-4 w-96 h-96 bg-[var(--neon-blue)] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
+        <div className="absolute top-0 -right-4 w-96 h-96 bg-[var(--neon-purple)] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000" />
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-[var(--neon-pink)] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-500" />
       </div>
 
       <div className="relative container mx-auto px-4 md:px-6 max-w-[var(--max-width)] z-10">
@@ -25,7 +25,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--bg-tertiary)] border border-[var(--border)] mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass neon-border mb-8"
           >
             <Sparkles className="w-4 h-4 text-[var(--accent)]" />
             <span className="text-sm text-[var(--text-secondary)]">
@@ -41,10 +41,10 @@ export function Hero() {
             className="mb-6"
           >
             <span className="block text-[var(--text-primary)]">
-              Crafting Digital
+              Building Intelligent
             </span>
-            <span className="block bg-gradient-to-r from-[var(--accent)] to-purple-600 bg-clip-text text-transparent">
-              Experiences
+            <span className="block bg-gradient-to-r from-[var(--accent)] via-[var(--neon-purple)] to-[var(--neon-pink)] bg-clip-text text-transparent neon-text">
+              AI Solutions
             </span>
           </motion.h1>
 
@@ -55,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto"
           >
-            Senior Frontend Engineer specializing in building exceptional digital experiences with modern web technologies
+            AI/ML Engineer with 3+ years of experience in Python development, specializing in GenAI, LLMs, and building production-grade machine learning systems
           </motion.p>
 
           {/* CTAs */}
@@ -66,13 +66,13 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link href="/projects">
-              <Button variant="primary" size="lg" className="gap-2 group">
-                View Projects
+              <Button variant="primary" size="lg" className="gap-2 group hover-glow">
+                View AI Projects
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" className="hover-lift">
                 Get in Touch
               </Button>
             </Link>
@@ -86,12 +86,12 @@ export function Hero() {
             className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {[
-              { label: 'Years Experience', value: '5+' },
-              { label: 'Projects Completed', value: '50+' },
-              { label: 'Happy Clients', value: '30+' },
+              { label: 'Years in AI/ML', value: '3+' },
+              { label: 'LLM Projects', value: '20+' },
+              { label: 'Models Deployed', value: '15+' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-[var(--accent)] mb-2 neon-text">
                   {stat.value}
                 </div>
                 <div className="text-sm text-[var(--text-muted)]">
@@ -110,11 +110,11 @@ export function Hero() {
         transition={{ duration: 1, delay: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <div className="w-6 h-10 rounded-full border-2 border-[var(--border)] flex items-start justify-center p-2">
+        <div className="w-6 h-10 rounded-full border-2 border-[var(--border)] flex items-start justify-center p-2 neon-border">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]"
+            className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] neon-glow"
           />
         </div>
       </motion.div>

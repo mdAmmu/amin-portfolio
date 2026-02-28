@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
 import { ExternalLink, Github, ArrowLeft } from 'lucide-react';
 import { FadeInUp } from '@/components/animations/reveal';
 import { SectionWrapper } from '@/components/layout/section-wrapper';
 import { Button } from '@/components/ui/button';
+import { MDXContent } from '@/components/mdx/mdx-content';
 import { getProject, getProjects } from '@/lib/content';
 
 export async function generateStaticParams() {
@@ -19,9 +19,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const project = getProject(params.slug);
+  const { slug } = await params;
+  const project = getProject(slug);
   
   if (!project) {
     return {
@@ -40,12 +41,13 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectDetailPage({ 
+export default async function ProjectDetailPage({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }>
 }) {
-  const project = getProject(params.slug);
+  const { slug } = await params;
+  const project = getProject(slug);
 
   if (!project) {
     notFound();
@@ -125,8 +127,8 @@ export default function ProjectDetailPage({
 
         {/* Content */}
         <FadeInUp delay={0.2}>
-          <article className="prose prose-lg dark:prose-invert max-w-none">
-            <ReactMarkdown>{project.content}</ReactMarkdown>
+          <article className="max-w-none">
+            <MDXContent source={project.content} />
           </article>
         </FadeInUp>
       </SectionWrapper>

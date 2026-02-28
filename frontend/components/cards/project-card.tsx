@@ -30,7 +30,7 @@ export function ProjectCard({
       className={cn('group', className)}
     >
       <Link href={href} className="block">
-        <div className="relative overflow-hidden rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-strong)]">
+        <div className="relative overflow-hidden rounded-2xl glass hover:glass-strong hover:neon-border transition-all duration-300 hover-lift hover-glow">
           {/* Image */}
           <div className="relative aspect-video overflow-hidden bg-[var(--bg-tertiary)]">
             <Image
@@ -39,13 +39,13 @@ export function ProjectCard({
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
           {/* Content */}
           <div className="p-6">
             <div className="flex items-start justify-between gap-4 mb-3">
-              <h3 className="text-xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-200">
+              <h3 className="text-xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] group-hover:neon-text transition-all duration-200">
                 {title}
               </h3>
               <ArrowUpRight className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200" />
@@ -60,7 +60,7 @@ export function ProjectCard({
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs font-medium rounded-full bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border)]"
+                  className="px-3 py-1 text-xs font-medium rounded-full glass text-[var(--text-secondary)] group-hover:neon-border transition-all duration-200"
                 >
                   {tag}
                 </span>

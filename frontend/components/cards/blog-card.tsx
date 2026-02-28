@@ -31,16 +31,16 @@ export function BlogCard({
       className={cn('group', className)}
     >
       <Link href={href} className="block">
-        <article className="p-6 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 hover:shadow-[var(--shadow-medium)]">
+        <article className="p-6 rounded-2xl glass hover:glass-strong hover:neon-border transition-all duration-300 hover-lift">
           {/* Category */}
           <div className="mb-3">
-            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20">
+            <span className="inline-block px-3 py-1 text-xs font-medium rounded-full glass neon-border text-[var(--accent)]">
               {category}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] transition-colors duration-200">
+          <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent)] group-hover:neon-text transition-all duration-200">
             {title}
           </h3>
 

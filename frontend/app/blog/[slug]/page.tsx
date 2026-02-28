@@ -1,13 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
 import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
 import { FadeInUp } from '@/components/animations/reveal';
 import { SectionWrapper } from '@/components/layout/section-wrapper';
 import { Button } from '@/components/ui/button';
+import { MDXContent } from '@/components/mdx/mdx-content';
 import { getBlogPost, getBlogPosts } from '@/lib/content';
 import 'highlight.js/styles/github-dark.css';
 
@@ -21,9 +19,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const post = getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   
   if (!post) {
     return {
@@ -44,12 +43,13 @@ export async function generateMetadata({
   };
 }
 
-export default function BlogPostPage({ 
+export default async function BlogPostPage({ 
   params 
 }: { 
-  params: { slug: string } 
+  params: Promise<{ slug: string }>
 }) {
-  const post = getBlogPost(params.slug);
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     notFound();
@@ -106,13 +106,8 @@ export default function BlogPostPage({
             </div>
 
             {/* Content */}
-            <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:text-[var(--text-primary)] prose-p:text-[var(--text-secondary)] prose-strong:text-[var(--text-primary)] prose-code:text-[var(--accent)] prose-a:text-[var(--accent)] prose-a:no-underline hover:prose-a:underline">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight]}
-              >
-                {post.content}
-              </ReactMarkdown>
+            <div className="max-w-none">
+              <MDXContent source={post.content} />
             </div>
           </article>
         </FadeInUp>

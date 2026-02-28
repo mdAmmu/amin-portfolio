@@ -1,0 +1,13 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(220,38,38);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(239,68,68);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad5)"/>
+  <path d="M 400 200 L 450 250 L 425 250 L 425 350 L 375 350 L 375 250 L 350 250 Z" fill="white" opacity="0.9"/>
+  <circle cx="400" cy="380" r="20" fill="white" opacity="0.9"/>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">Medical LLM</text>
+  <text x="400" y="510" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.8)" text-anchor="middle">Fine-Tuning Platform</text>
+</svg>

@@ -2,60 +2,60 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { FadeInUp } from '@/components/animations/reveal';
 import { SectionWrapper } from '@/components/layout/section-wrapper';
-import { Code2, Palette, Zap, Heart } from 'lucide-react';
+import { Brain, Cpu, Database, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About - Portfolio',
-  description: 'Learn more about my background, skills, and passion for web development.',
+  title: 'About - AI/ML Engineer',
+  description: 'Learn about my experience in AI/ML engineering, from building LLM applications to deploying production ML systems.',
 };
 
 const timeline = [
   {
-    year: '2026',
-    title: 'Senior Frontend Engineer',
-    company: 'Tech Company',
-    description: 'Leading frontend development for enterprise applications',
+    year: '2024',
+    title: 'Senior AI/ML Engineer',
+    company: 'AI Startup',
+    description: 'Leading development of production LLM applications and RAG systems serving 1M+ queries monthly',
   },
   {
-    year: '2024',
-    title: 'Frontend Engineer',
-    company: 'Startup Inc',
-    description: 'Built scalable web applications using React and Next.js',
+    year: '2023',
+    title: 'ML Engineer',
+    company: 'Healthcare Tech',
+    description: 'Built and deployed custom fine-tuned medical LLMs with 95% accuracy on clinical tasks',
   },
   {
     year: '2022',
-    title: 'Junior Developer',
-    company: 'Web Agency',
-    description: 'Developed client websites and learned modern web technologies',
+    title: 'Data Scientist',
+    company: 'Enterprise SaaS',
+    description: 'Developed ML pipelines for real-time sentiment analysis processing 50M+ posts daily',
   },
   {
     year: '2021',
-    title: 'Computer Science Degree',
+    title: 'Computer Science & AI',
     company: 'University',
-    description: 'Graduated with honors in Computer Science',
+    description: 'Specialized in Machine Learning, Deep Learning, and Natural Language Processing',
   },
 ];
 
 const values = [
   {
-    icon: Code2,
-    title: 'Clean Code',
-    description: 'Writing maintainable, scalable, and well-tested code',
+    icon: Brain,
+    title: 'AI Innovation',
+    description: 'Pushing boundaries with cutting-edge LLMs and GenAI technologies',
   },
   {
-    icon: Palette,
-    title: 'Design Excellence',
-    description: 'Crafting beautiful, intuitive user experiences',
+    icon: Cpu,
+    title: 'Production ML',
+    description: 'Building scalable, reliable ML systems that deliver real business value',
+  },
+  {
+    icon: Database,
+    title: 'Data Quality',
+    description: 'Ensuring high-quality training data and robust evaluation frameworks',
   },
   {
     icon: Zap,
-    title: 'Performance First',
-    description: 'Building fast, optimized web applications',
-  },
-  {
-    icon: Heart,
-    title: 'User-Centric',
-    description: 'Always putting users at the center of development',
+    title: 'Performance',
+    description: 'Optimizing ML models for speed, cost, and accuracy in production',
   },
 ];
 
@@ -82,13 +82,14 @@ export default function AboutPage() {
               <div>
                 <h1 className="mb-6">About Me</h1>
                 <p className="text-xl text-[var(--text-secondary)] mb-6">
-                  I'm a passionate frontend engineer with 5+ years of experience
-                  building modern web applications. I specialize in React, Next.js,
-                  and TypeScript.
+                  I'm an AI/ML Engineer with 3+ years of specialized experience in
+                  Python development, Large Language Models, and GenAI applications.
+                  I build production-grade AI systems that solve real business problems.
                 </p>
                 <p className="text-lg text-[var(--text-secondary)]">
-                  I believe in writing clean, maintainable code and creating
-                  delightful user experiences that make a difference.
+                  From fine-tuning LLMs to building RAG systems and deploying ML pipelines
+                  at scale, I focus on creating reliable, accurate AI solutions that
+                  deliver measurable impact.
                 </p>
               </div>
             </div>
