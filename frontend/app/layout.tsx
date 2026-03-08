@@ -5,6 +5,8 @@ import { QueryProvider } from "@/providers/QueryProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { Preloader } from "@/components/animations/preloader";
+import { siteConfig } from "@/lib/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,14 +19,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Frontend Engineer",
-  description: "A modern portfolio showcasing advanced frontend engineering, refined UI/UX, and animation fluency.",
-  keywords: ["portfolio", "frontend", "web development", "UI/UX", "Next.js"],
-  authors: [{ name: "Your Name" }],
+  title: siteConfig.metadata.title,
+  description: siteConfig.metadata.description,
+  keywords: ["portfolio", "AI/ML", "GenAI", "LLMs", "Machine Learning", "Next.js"],
+  authors: [{ name: siteConfig.personal.name }],
   openGraph: {
-    title: "Portfolio - Frontend Engineer",
-    description: "A modern portfolio showcasing advanced frontend engineering.",
+    title: siteConfig.metadata.title,
+    description: siteConfig.metadata.description,
     type: "website",
+    url: siteConfig.metadata.siteUrl,
+    images: [siteConfig.metadata.ogImage],
   },
 };
 
@@ -40,6 +44,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <QueryProvider>
+            <Preloader />
             <Navbar />
             <main className="min-h-screen relative z-10">
               {children}

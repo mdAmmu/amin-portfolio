@@ -24,6 +24,7 @@ export const siteConfig = {
   contact: {
     email: 'faizan.popatiya.work@gmail.com',
     location: 'Hyderabad', // Optional
+    resume: '/resume.pdf', // Path to resume file in public folder
   },
 
   // Social Media Links

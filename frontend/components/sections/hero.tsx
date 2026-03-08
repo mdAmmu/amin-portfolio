@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Twitter, Mail, Code2 } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Twitter, Mail, Code2, Download } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config';
@@ -12,6 +12,7 @@ const socialLinks = [
   { icon: Twitter, href: siteConfig.social.twitter, label: 'Twitter' },
   { icon: Code2, href: siteConfig.social.leetcode, label: 'LeetCode' },
   { icon: Mail, href: `mailto:${siteConfig.contact.email}`, label: 'Email' },
+  { icon: Download, href: siteConfig.contact.resume, label: 'Resume', download: true },
 ];
 
 export function Hero() {
@@ -64,13 +65,32 @@ export function Hero() {
                 style={{ letterSpacing: '-0.02em' }}
               >
                 Hi, I am
-                <span className="block text-[var(--accent)]">{siteConfig.personal.name}</span>
+                <span className="block text-[var(--accent)] overflow-hidden">
+                  {siteConfig.personal.name.split('').map((char, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{ opacity: 0, y: 50, rotateX: -90 }}
+                      animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                      transition={{
+                        delay: 0.4 + index * 0.05,
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 12,
+                      }}
+                      className="inline-block"
+                      style={{ transformOrigin: 'bottom' }}
+                    >
+                      {char === ' ' ? '\u00A0' : char}
+                    </motion.span>
+                  ))}
+                </span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
                 className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl leading-relaxed"
                 style={{ lineHeight: '1.6' }}
               >
@@ -82,7 +102,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ delay: 1.4, duration: 0.6 }}
               className="flex flex-wrap gap-4"
             >
               <Link href="/projects">
@@ -111,7 +131,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 1.6, duration: 0.6 }}
               className="flex items-center gap-3"
             >
               {socialLinks.map((social, index) => (
@@ -119,17 +139,23 @@ export function Hero() {
                   key={social.label}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.05, duration: 0.3 }}
+                  transition={{ delay: 1.7 + index * 0.05, duration: 0.3 }}
+                  className="relative"
                 >
-                  <Link
+                  <a
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    download={'download' in social ? true : undefined}
                     className="flex items-center justify-center w-11 h-11 rounded-full bg-[var(--bg-secondary)] border border-[var(--border)] hover:border-[var(--accent)] hover:bg-[var(--bg-tertiary)] transition-all duration-300 group"
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5 text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300" />
-                  </Link>
+                    {/* Tooltip */}
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-[var(--bg-tertiary)] text-[var(--text-primary)] text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-[var(--border)]">
+                      {social.label}
+                    </span>
+                  </a>
                 </motion.div>
               ))}
             </motion.div>
