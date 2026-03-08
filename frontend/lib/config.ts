@@ -56,7 +56,7 @@ export const siteConfig = {
     {
       year: 'Present',
       role: 'Senior Software Developer',
-      company: 'Cognida.ai',
+      company: 'Cognida',
       duration: 'Aug 2023 - Present',
       description: 'Leading development of GenAI applications using LLMs, vector databases, and Python frameworks. Building RAG systems and fine-tuning models for improved performance.',
       highlights: []
@@ -135,6 +135,7 @@ export const siteConfig = {
     { href: '/', label: 'Home' },
     { href: '/projects', label: 'Projects' },
     { href: '/blog', label: 'Blog' },
+    { href: '/store', label: 'Store' },
     { href: '/playground', label: 'Playground' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },

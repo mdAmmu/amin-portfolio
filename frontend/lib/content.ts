@@ -30,6 +30,30 @@ export interface Project {
   content: string;
 }
 
+export interface Product {
+  slug: string;
+  title: string;
+  excerpt: string;
+  price: number;
+  category: string;
+  image: string;
+  tags: string[];
+  featured: boolean;
+  demoUrl?: string;
+  downloadUrl?: string;
+  purchaseUrl?: string;
+  difficulty: string;
+  version: string;
+  lastUpdated: string;
+  rating?: number;
+  reviews?: number;
+  downloads?: number;
+  isPro: boolean;
+  license: string;
+  content: string;
+  published: boolean;
+}
+
 export function getBlogPosts(): BlogPost[] {
   const blogDir = path.join(contentDirectory, 'blog');
   
@@ -140,6 +164,86 @@ export function getProject(slug: string): Project | null {
       githubUrl: data.githubUrl,
       featured: data.featured || false,
       content,
+    };
+  } catch (error) {
+    return null;
+  }
+}
+
+export function getProducts(): Product[] {
+  const productsDir = path.join(contentDirectory, 'products');
+  
+  if (!fs.existsSync(productsDir)) {
+    return [];
+  }
+
+  const files = fs.readdirSync(productsDir);
+  
+  const products = files
+    .filter((file) => file.endsWith('.mdx'))
+    .map((file) => {
+      const slug = file.replace('.mdx', '');
+      const filePath = path.join(productsDir, file);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data, content } = matter(fileContents);
+
+      return {
+        slug,
+        title: data.title,
+        excerpt: data.excerpt,
+        price: data.price,
+        category: data.category,
+        image: data.image,
+        tags: data.tags || [],
+        featured: data.featured || false,
+        demoUrl: data.demoUrl,
+        downloadUrl: data.downloadUrl,
+        purchaseUrl: data.purchaseUrl,
+        difficulty: data.difficulty || 'intermediate',
+        version: data.version || '1.0.0',
+        lastUpdated: data.lastUpdated,
+        rating: data.rating,
+        reviews: data.reviews,
+        downloads: data.downloads,
+        isPro: data.isPro || false,
+        license: data.license || 'MIT',
+        content,
+        published: data.published !== false,
+      };
+    })
+    .filter((product) => product.published);
+
+  return products;
+}
+
+export function getProduct(slug: string): Product | null {
+  try {
+    const filePath = path.join(contentDirectory, 'products', `${slug}.mdx`);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    return {
+      slug,
+      title: data.title,
+      excerpt: data.excerpt,
+      price: data.price,
+      category: data.category,
+      image: data.image,
+      tags: data.tags || [],
+      featured: data.featured || false,
+      demoUrl: data.demoUrl,
+      downloadUrl: data.downloadUrl,
+      purchaseUrl: data.purchaseUrl,
+      difficulty: data.difficulty || 'intermediate',
+      version: data.version || '1.0.0',
+      lastUpdated: data.lastUpdated,
+      rating: data.rating,
+      reviews: data.reviews,
+      downloads: data.downloads,
+      isPro: data.isPro || false,
+      license: data.license || 'MIT',
+      content,
+      published: data.published !== false,
     };
   } catch (error) {
     return null;
