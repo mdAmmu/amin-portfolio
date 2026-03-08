@@ -184,7 +184,7 @@ export default function ContactPage() {
                 className="inline-flex items-center gap-2 text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span className="text-lg font-medium">hello@example.com</span>
+                <span className="text-lg font-medium">mdaminpopatiya123@gmail.com</span>
               </a>
             </div>
           </FadeInUp>

@@ -40,7 +40,7 @@ export default function Home() {
     <>
       <Hero />
       <FeaturedProjects projects={featuredProjects} />
-      <Skills />
+      {/* <Skills /> */}
       <BlogPreview posts={recentPosts} />
       <CTA />
     </>

@@ -16,10 +16,10 @@ export const siteConfig = {
 
   // Personal Information
   personal: {
-    name: 'Faizan Popatiya',
-    firstName: 'Faizan',
+    name: 'Amin Popatiya',
+    firstName: 'Amin',
     lastName: 'Popatiya',
-    title: 'GenAI Engineer',
+    title: 'Front-end Developer',
     tagline: 'Building Intelligent AI Solutions',
     shortBio: 'GenAI Engineer specializing in GenAI, LLMs, and production-grade machine learning systems. Transforming complex data into intelligent solutions.',
     longBio: "I'm a GenAI Engineer with 3+ years of specialized experience in Python development, Large Language Models, and GenAI applications. I build production-grade AI systems that solve real business problems.",
@@ -30,17 +30,17 @@ export const siteConfig = {
 
   // Contact Information
   contact: {
-    email: 'faizan.popatiya.work@gmail.com',
+    email: 'mdaminpopatiya123@gmail.com',
     location: 'Hyderabad', // Optional
-    resume: '/resume.pdf', // Path to resume file in public folder
+    resume: '/My-resume.pdf', // Path to resume file in public folder
   },
 
   // Social Media Links
   social: {
-    github: 'https://github.com/fayzan9',
-    linkedin: 'https://www.linkedin.com/in/faizan-popatiya-452980250/',
-    twitter: 'https://twitter.com/yourhandle',
-    leetcode: 'https://leetcode.com/u/fayzanpopatiya/',
+    github: 'https://github.com/mdAmmu',
+    linkedin: 'https://www.linkedin.com/in/md-amin-810b55383/',
+    twitter: '',
+    leetcode: 'https://leetcode.com/u/mdamin_123/',
     // Add more as needed
   },
 
