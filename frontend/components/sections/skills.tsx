@@ -92,7 +92,7 @@ export function Skills() {
                     </div>
 
                     <ul className="space-y-1.5 mt-3">
-                      {exp.highlights.map((point, i) => (
+                      {exp.highlights?.map((point, i) => (
                         <li key={i} className="text-sm text-[var(--text-secondary)] flex items-start gap-2">
                           <span className="text-[var(--accent)] mt-1">•</span>
                           <span>{point}</span>

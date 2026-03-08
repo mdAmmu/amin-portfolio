@@ -11,10 +11,10 @@ export const siteConfig = {
     name: 'Faizan Popatiya',
     firstName: 'Faizan',
     lastName: 'Popatiya',
-    title: 'AI/ML Engineer',
+    title: 'GenAI Engineer',
     tagline: 'Building Intelligent AI Solutions',
-    shortBio: 'AI/ML Engineer specializing in GenAI, LLMs, and production-grade machine learning systems. Transforming complex data into intelligent solutions.',
-    longBio: "I'm an AI/ML Engineer with 3+ years of specialized experience in Python development, Large Language Models, and GenAI applications. I build production-grade AI systems that solve real business problems.",
+    shortBio: 'GenAI Engineer specializing in GenAI, LLMs, and production-grade machine learning systems. Transforming complex data into intelligent solutions.',
+    longBio: "I'm a GenAI Engineer with 3+ years of specialized experience in Python development, Large Language Models, and GenAI applications. I build production-grade AI systems that solve real business problems.",
     extendedBio: "From fine-tuning LLMs to building RAG systems and deploying ML pipelines at scale, I focus on creating reliable, accurate AI solutions that deliver measurable impact.",
     yearsExperience: '3+',
     avatar: '/avatar.svg',
@@ -46,48 +46,27 @@ export const siteConfig = {
   // Experience Timeline (for About and Skills pages)
   experience: [
     {
-      year: '2024',
-      role: 'Senior AI/ML Engineer',
-      company: 'AI Startup',
-      duration: '2023 - Present',
-      description: 'Leading development of production LLM applications and RAG systems serving 1M+ queries monthly',
-      highlights: [
-        'Leading development of production LLM applications',
-        'Built RAG systems serving 1M+ queries monthly',
-        'Improved model performance by 40%',
-      ],
+      year: 'Present',
+      role: 'Senior Software Developer',
+      company: 'Cognida.ai',
+      duration: 'Aug 2023 - Present',
+      description: 'Leading development of GenAI applications using LLMs, vector databases, and Python frameworks. Building RAG systems and fine-tuning models for improved performance.',
+      highlights: []
     },
     {
       year: '2023',
-      role: 'ML Engineer',
-      company: 'Healthcare Tech',
-      duration: '2022 - 2023',
-      description: 'Built and deployed custom fine-tuned medical LLMs with 95% accuracy on clinical tasks',
-      highlights: [
-        'Fine-tuned medical LLMs with 95% accuracy',
-        'Deployed models for clinical decision support',
-        'Reduced inference time by 60%',
-      ],
+      role: 'Software Developer Intern',
+      company: 'Cognida.ai',
+      duration: 'Feb 2023 - Aug 2023',
+      description: 'Developed and deployed GenAI applications using LLMs, vector databases, and Python frameworks. Built RAG systems and fine-tuned models for improved performance.',
+      highlights: []
     },
     {
-      year: '2022',
-      role: 'Data Scientist',
-      company: 'Enterprise SaaS',
-      duration: '2021 - 2022',
-      description: 'Developed ML pipelines for real-time sentiment analysis processing 50M+ posts daily',
-      highlights: [
-        'Built ML pipelines for sentiment analysis',
-        'Processed 50M+ posts daily',
-        'Improved prediction accuracy by 30%',
-      ],
-    },
-    {
-      year: '2021',
-      role: 'Computer Science & AI',
-      company: 'University',
-      duration: '2017 - 2021',
-      description: 'Specialized in Machine Learning, Deep Learning, and Natural Language Processing',
-      highlights: [],
+      year: '2019',
+      role: 'B.Tech in Computer Science Engineering',
+      company: 'Dr. Babasaheb Ambedkar Technological University',
+      duration: 'June 2019 - July 2023',
+      description: 'Graduated with a B.Tech in Computer Science Engineering, specializing in AI and machine learning. Completed coursework in algorithms, data structures, machine learning, and deep learning.',
     },
   ],
 
@@ -96,7 +75,7 @@ export const siteConfig = {
     {
       category: 'AI & LLMs',
       icon: 'Brain',
-      skills: ['GPT', 'Claude', 'Llama', 'Fine-tuning', 'RAG', 'Prompt Engineering'],
+      skills: ['OpenAI', 'Agentic AI Frameworks', 'RAG', 'Prompt Engineering'],
     },
     {
       category: 'ML Frameworks',
@@ -106,7 +85,7 @@ export const siteConfig = {
     {
       category: 'Development',
       icon: 'Code2',
-      skills: ['Python', 'FastAPI', 'Django', 'TypeScript', 'Next.js', 'Docker'],
+      skills: ['Python', 'FastAPI', 'Django', 'Docker'],
     },
     {
       category: 'Data & Vectors',
@@ -116,7 +95,7 @@ export const siteConfig = {
     {
       category: 'Cloud & Ops',
       icon: 'Network',
-      skills: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'CI/CD', 'MLOps'],
+      skills: ['Azure', 'Kubernetes', 'CI/CD'],
     },
   ],
 
