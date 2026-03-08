@@ -3,11 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/providers/QueryProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import { Navbar } from "@/components/layout/navbar";
+// import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Preloader } from "@/components/animations/preloader";
 import { siteConfig } from "@/lib/config";
 import { generateThemeCSS } from "@/lib/theme-utils";
+import LayoutWrapper from "@/components/layout/layout-wrapper"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,9 +54,10 @@ export default function RootLayout({
         <ThemeProvider>
           <QueryProvider>
             <Preloader />
-            <Navbar />
             <main className="min-h-screen relative z-10">
-              {children}
+              <LayoutWrapper>
+                {children}
+              </LayoutWrapper>
             </main>
             <Footer />
           </QueryProvider>
