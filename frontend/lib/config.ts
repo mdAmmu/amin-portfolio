@@ -31,6 +31,7 @@ export const siteConfig = {
     github: 'https://github.com/fayzan9',
     linkedin: 'https://www.linkedin.com/in/faizan-popatiya-452980250/',
     twitter: 'https://twitter.com/yourhandle',
+    leetcode: 'https://leetcode.com/u/fayzanpopatiya/',
     // Add more as needed
   },
 
@@ -86,6 +87,35 @@ export const siteConfig = {
       duration: '2017 - 2021',
       description: 'Specialized in Machine Learning, Deep Learning, and Natural Language Processing',
       highlights: [],
+    },
+  ],
+
+  // Technical Skills
+  skills: [
+    {
+      category: 'AI & LLMs',
+      icon: 'Brain',
+      skills: ['GPT', 'Claude', 'Llama', 'Fine-tuning', 'RAG', 'Prompt Engineering'],
+    },
+    {
+      category: 'ML Frameworks',
+      icon: 'Cpu',
+      skills: ['PyTorch', 'TensorFlow', 'Hugging Face', 'LangChain', 'scikit-learn'],
+    },
+    {
+      category: 'Development',
+      icon: 'Code2',
+      skills: ['Python', 'FastAPI', 'Django', 'TypeScript', 'Next.js', 'Docker'],
+    },
+    {
+      category: 'Data & Vectors',
+      icon: 'Database',
+      skills: ['Pinecone', 'Weaviate', 'ChromaDB', 'PostgreSQL', 'Redis'],
+    },
+    {
+      category: 'Cloud & Ops',
+      icon: 'Network',
+      skills: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'CI/CD', 'MLOps'],
     },
   ],
 

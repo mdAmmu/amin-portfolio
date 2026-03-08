@@ -9,39 +9,26 @@ import {
   Cpu, 
   Code2, 
   Network,
-  TrendingUp
+  TrendingUp,
+  LucideIcon
 } from 'lucide-react';
 import { siteConfig } from '@/lib/config';
 
 const experience = siteConfig.experience;
 
-const skillCategories = [
-  {
-    category: 'AI & LLMs',
-    icon: Brain,
-    skills: ['GPT', 'Claude', 'Llama', 'Fine-tuning', 'RAG', 'Prompt Engineering'],
-  },
-  {
-    category: 'ML Frameworks',
-    icon: Cpu,
-    skills: ['PyTorch', 'TensorFlow', 'Hugging Face', 'LangChain', 'scikit-learn'],
-  },
-  {
-    category: 'Development',
-    icon: Code2,
-    skills: ['Python', 'FastAPI', 'Django', 'TypeScript', 'Next.js', 'Docker'],
-  },
-  {
-    category: 'Data & Vectors',
-    icon: Database,
-    skills: ['Pinecone', 'Weaviate', 'ChromaDB', 'PostgreSQL', 'Redis'],
-  },
-  {
-    category: 'Cloud & Ops',
-    icon: Network,
-    skills: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'CI/CD', 'MLOps'],
-  },
-];
+// Icon mapping
+const iconMap: Record<string, LucideIcon> = {
+  Brain,
+  Database,
+  Cpu,
+  Code2,
+  Network,
+};
+
+const skillCategories = siteConfig.skills.map((skill) => ({
+  ...skill,
+  icon: iconMap[skill.icon] || Brain,
+}));
 
 export function Skills() {
   return (

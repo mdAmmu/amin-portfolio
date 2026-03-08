@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Code2 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/config';
 
@@ -6,6 +6,7 @@ const socialLinks = [
   { icon: Github, href: siteConfig.social.github, label: 'GitHub' },
   { icon: Linkedin, href: siteConfig.social.linkedin, label: 'LinkedIn' },
   { icon: Twitter, href: siteConfig.social.twitter, label: 'Twitter' },
+  { icon: Code2, href: siteConfig.social.leetcode, label: 'LeetCode' },
   { icon: Mail, href: `mailto:${siteConfig.contact.email}`, label: 'Email' },
 ];
 

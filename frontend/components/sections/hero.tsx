@@ -1,10 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Twitter, Mail, Code2 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/config';
+
+const socialLinks = [
+  { icon: Github, href: siteConfig.social.github, label: 'GitHub' },
+  { icon: Linkedin, href: siteConfig.social.linkedin, label: 'LinkedIn' },
+  { icon: Twitter, href: siteConfig.social.twitter, label: 'Twitter' },
+  { icon: Code2, href: siteConfig.social.leetcode, label: 'LeetCode' },
+  { icon: Mail, href: `mailto:${siteConfig.contact.email}`, label: 'Email' },
+];
 
 export function Hero() {
   return (
@@ -97,6 +105,33 @@ export function Hero() {
                   Get in Touch
                 </Button>
               </Link>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="flex items-center gap-3"
+            >
+              {socialLinks.map((social, index) => (
+                <motion.div
+                  key={social.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 + index * 0.05, duration: 0.3 }}
+                >
+                  <Link
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-11 h-11 rounded-full bg-[var(--bg-secondary)] border border-[var(--border)] hover:border-[var(--accent)] hover:bg-[var(--bg-tertiary)] transition-all duration-300 group"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5 text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors duration-300" />
+                  </Link>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
