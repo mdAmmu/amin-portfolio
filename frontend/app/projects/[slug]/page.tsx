@@ -56,7 +56,7 @@ export default async function ProjectDetailPage({
   return (
     <>
       {/* Back Button */}
-      <SectionWrapper className="pt-24 pb-8">
+      <SectionWrapper className="pt-24 pb-0 md:pb-0 lg:pb-0">
         <FadeInUp>
           <Link href="/projects">
             <Button variant="ghost" className="gap-2 mb-8">
@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({
       </SectionWrapper>
 
       {/* Hero Image */}
-      <SectionWrapper className="py-0">
+      <SectionWrapper className="py-0 md:py-0 lg:py-0">
         <FadeInUp>
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-[var(--bg-tertiary)] mb-12">
             <Image
@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({
       </SectionWrapper>
 
       {/* Project Header */}
-      <SectionWrapper className="py-0">
+      <SectionWrapper className="pt-0 md:pt-0 lg:pt-0">
         <FadeInUp delay={0.1}>
           <div className="mb-12">
             <h1 className="mb-4">{project.title}</h1>

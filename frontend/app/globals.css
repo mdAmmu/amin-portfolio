@@ -243,7 +243,7 @@
   
   /* Medium-Style Article Typography */
   .medium-article {
-    max-width: 680px;
+    max-width: 1024px;
     margin: 0 auto;
     font-family: Georgia, 'Times New Roman', serif;
   }
