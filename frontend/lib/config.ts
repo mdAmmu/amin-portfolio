@@ -135,6 +135,7 @@ export const siteConfig = {
     { href: '/', label: 'Home' },
     { href: '/projects', label: 'Projects' },
     { href: '/blog', label: 'Blog' },
+    { href: '/playground', label: 'Playground' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ],
