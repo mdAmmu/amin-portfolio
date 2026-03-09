@@ -11,7 +11,7 @@ export const siteConfig = {
   // Theme Settings
   theme: {
     // Choose from: 'indigo', 'ocean', 'sunset', 'purple', 'emerald', 'rose', 'slate', 'cyber'
-    colorPalette: 'indigo' as ColorPaletteName,
+    colorPalette: 'mint' as ColorPaletteName,
   },
 
   // Personal Information
@@ -32,7 +32,7 @@ export const siteConfig = {
   contact: {
     email: 'mdaminpopatiya123@gmail.com',
     location: 'Hyderabad', // Optional
-    resume: '/My-resume.pdf', // Path to resume file in public folder
+    resume: '/amin-resume.pdf', // Path to resume file in public folder
   },
 
   // Social Media Links

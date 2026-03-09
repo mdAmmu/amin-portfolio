@@ -32,7 +32,7 @@ export function Hero() {
       <div className="relative container mx-auto px-6 md:px-8 max-w-[var(--max-width)] z-10">
         {/* Content Layout */}
         <div className="max-w-4xl mx-auto">
-          
+
           {/* Left Column - Primary Messaging (60%) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export function Hero() {
                 style={{ letterSpacing: '-0.02em' }}
               >
                 Hi, I am
-                <span className="block text-[var(--accent)] overflow-hidden">
+                <span className="block text-[var(--accent)] overflow-hidden pb-2">
                   {siteConfig.personal.name.split('').map((char, index) => (
                     <motion.span
                       key={index}
@@ -106,19 +106,19 @@ export function Hero() {
               className="flex flex-wrap gap-4"
             >
               <Link href="/projects">
-                <Button 
-                  variant="primary" 
-                  size="lg" 
+                <Button
+                  variant="primary"
+                  size="lg"
                   className="gap-2 group shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   View Projects
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              
+
               <Link href="/contact">
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   className="shadow-md hover:shadow-lg transition-all duration-300"
                 >

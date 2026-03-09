@@ -12,7 +12,7 @@ title: "Your Blog Post Title Here"
 excerpt: "A brief summary of your blog post (2-3 sentences). This appears in blog listings and social media previews."
 date: "2026-03-08"
 category: "AI/ML" # or "Web Development", "Tutorial", "Career", etc.
-author: "Faizan Popatiya"
+author: "Amin Popatiya"
 published: true # Set to false to hide from public view
 ---
 
