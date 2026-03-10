@@ -17,14 +17,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ 
-  params 
-}: { 
+export async function generateMetadata({
+  params
+}: {
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
-  
+
   if (!project) {
     return {
       title: 'Project Not Found',
@@ -42,9 +42,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProjectDetailPage({ 
-  params 
-}: { 
+export default async function ProjectDetailPage({
+  params
+}: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
@@ -57,10 +57,10 @@ export default async function ProjectDetailPage({
   return (
     <>
       {/* Back Button */}
-      <SectionWrapper className="pt-24 pb-0 md:pb-0 lg:pb-0">
+      <SectionWrapper className="pb-2 ">
         <FadeInUp>
           <Link href="/projects">
-            <Button variant="ghost" className="gap-2 mb-8">
+            <Button variant="ghost" className="gap-2 mb-8 mt-24">
               <ArrowLeft className="w-4 h-4" />
               Back to Projects
             </Button>

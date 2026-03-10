@@ -8,6 +8,7 @@ Use this template when creating new blog posts. Copy the structure below into a 
 
 ```mdx
 ---
+image: "/products/product-image.svg" # or .png, .jpg - Main product preview
 title: "Your Blog Post Title Here"
 excerpt: "A brief summary of your blog post (2-3 sentences). This appears in blog listings and social media previews."
 date: "2026-03-08"

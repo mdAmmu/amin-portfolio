@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { MDXContent } from '@/components/mdx/mdx-content';
 import { getBlogPost, getBlogPosts } from '@/lib/content';
 import 'highlight.js/styles/github-dark.css';
+import Image from 'next/image';
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -16,14 +17,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ 
-  params 
-}: { 
+export async function generateMetadata({
+  params
+}: {
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  
+
   if (!post) {
     return {
       title: 'Post Not Found',
@@ -43,9 +44,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPostPage({ 
-  params 
-}: { 
+export default async function BlogPostPage({
+  params
+}: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
@@ -58,7 +59,7 @@ export default async function BlogPostPage({
   return (
     <>
       {/* Back Button */}
-      <SectionWrapper className="pt-24 pb-8">
+      <SectionWrapper className="pt-24 pb-2">
         <FadeInUp>
           <Link href="/blog">
             <Button variant="ghost" className="gap-2 mb-8">
@@ -70,7 +71,7 @@ export default async function BlogPostPage({
       </SectionWrapper>
 
       {/* Article Header */}
-      <SectionWrapper className="py-0">
+      <section className="py-0">
         <FadeInUp>
           <article className="max-w-3xl mx-auto">
             {/* Category */}
@@ -80,8 +81,18 @@ export default async function BlogPostPage({
               </span>
             </div>
 
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-[var(--bg-tertiary)] mb-12">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
             {/* Title */}
-            <h1 className="mb-6">{post.title}</h1>
+            <h1 className="mb-12">{post.title}</h1>
 
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-6 text-[var(--text-muted)] mb-12 pb-8 border-b border-[var(--border)]">
@@ -111,7 +122,7 @@ export default async function BlogPostPage({
             </div>
           </article>
         </FadeInUp>
-      </SectionWrapper>
+      </section>
     </>
   );
 }

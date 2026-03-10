@@ -9,6 +9,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  image: string;
   date: string;
   category: string;
   author: string;
@@ -56,13 +57,13 @@ export interface Product {
 
 export function getBlogPosts(): BlogPost[] {
   const blogDir = path.join(contentDirectory, 'blog');
-  
+
   if (!fs.existsSync(blogDir)) {
     return [];
   }
 
   const files = fs.readdirSync(blogDir);
-  
+
   const posts = files
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => {
@@ -74,6 +75,7 @@ export function getBlogPosts(): BlogPost[] {
 
       return {
         slug,
+        image: data.image,
         title: data.title,
         excerpt: data.excerpt,
         date: data.date,
@@ -99,6 +101,7 @@ export function getBlogPost(slug: string): BlogPost | null {
 
     return {
       slug,
+      image: data.image,
       title: data.title,
       excerpt: data.excerpt,
       date: data.date,
@@ -115,13 +118,13 @@ export function getBlogPost(slug: string): BlogPost | null {
 
 export function getProjects(): Project[] {
   const projectsDir = path.join(contentDirectory, 'projects');
-  
+
   if (!fs.existsSync(projectsDir)) {
     return [];
   }
 
   const files = fs.readdirSync(projectsDir);
-  
+
   const projects = files
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => {
@@ -172,13 +175,13 @@ export function getProject(slug: string): Project | null {
 
 export function getProducts(): Product[] {
   const productsDir = path.join(contentDirectory, 'products');
-  
+
   if (!fs.existsSync(productsDir)) {
     return [];
   }
 
   const files = fs.readdirSync(productsDir);
-  
+
   const products = files
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => {

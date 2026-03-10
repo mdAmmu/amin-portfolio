@@ -21,7 +21,7 @@ export const SectionWrapper = forwardRef<HTMLElement, SectionWrapperProps>(
         ref={ref}
         id={id}
         className={cn(
-          'py-16 md:py-24 lg:py-32',
+          'py-16 md:py-24 lg:py-28',
           bgClass,
           className
         )}
